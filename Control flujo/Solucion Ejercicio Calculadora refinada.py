@@ -5,31 +5,31 @@ print("Las operaciones disponibles son suma, resta, multiplicacion, division.")
 print("Que operacion quiere realizar?")
 
 resultado = ""
-while True:
+while True: 
     if not resultado:
-        resultado = input("ingrese numero: ")
-        if resultado.upper() == "salir":
+        resultado = input("Ingrese numero: ")
+        if resultado.lower() == "salir":
             break
-        resultado = int(resultado)
-    op = input("ingresa operacion: ")
-    if op.upper() == "salir": 
+        resultado = int(resultado)    
+    op = input("Ingresa operacion: ")
+    if op.lower() == "salir":
         break
-
     n2 = input("Ingresa siguiente numero: ")
-    if n2.upper() == "salir": 
-        break
+    if n2.lower() == "salir":
+       break
     n2 = int(n2)
 
     if op.lower() == "suma":
-        resultado += n2
+        resultado += n2 
     elif op.lower() == "resta":
         resultado -= n2
     elif op.lower() == "multiplicacion":
         resultado *= n2
     elif op.lower() == "division":
         resultado /= n2
-    else: 
-        print("Operacion no valida")
+    else:
+        print("operacion invalida")
         break
-
-print(f'El resultado es {resultado}')
+    
+    print(f"el resultado es {resultado}")
+     
