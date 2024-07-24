@@ -9,7 +9,7 @@ def AdivinaNumero(x):
     LimiteSup = x
 
     respuesta = " "
-    while respuesta != "R": 
+    while respuesta != "r": 
         if limiteInf != LimiteSup: 
             prediccion = random.randint(limiteInf, LimiteSup)
         else: 
@@ -22,7 +22,9 @@ def AdivinaNumero(x):
             LimiteSup = prediccion - 1
         elif respuesta == "b":
             limiteInf = prediccion + 1
-    print(f"Si, la computadora adivino tu numero. Tu numero es {prediccion}")
+        elif respuesta == "r":    
+         print(f"Si, la computadora adivino tu numero. Tu numero es {prediccion}")
+    
 
 
 AdivinaNumero(10)
