@@ -34,12 +34,23 @@ def ahorcado():
         #Mostrar letras separadas x espacio
         print(f"Palabras: {' '.join(palabra_lista)}")
 
-        letra_usuario = input("Escoge una letra").upper()
+        letra_usuario = input("Escoge una letra: ").upper()
         if letra_usuario in abecedario - letras_adivinadas:
             letras_adivinadas.add(letra_usuario)
-        if letra_usuario in letras_por_adivinar:
-            letras_por_adivinar.remove(letra_usuario)
-            print(' ')
-        else:
-            vidas = vidas - 1 
-            print(f"\nTu letra, {letra_usuario}, no esta en la palabra")
+            if letra_usuario in letras_por_adivinar:
+                letras_por_adivinar.remove(letra_usuario)
+                print(' ')
+            else:
+                vidas = vidas - 1 
+                print(f"\nTu letra, {letra_usuario}, no está en la palabra")
+        elif letra_usuario in letras_adivinadas:
+            print("\nYa escogiste esa letra, elige una nueva")
+    #Se llega a este punto cuando se adivinan todas las letras, o cuando se acaban las vidas 
+
+    if vidas == 0:
+        print(vidas_diccionario_visual[vidas])
+        print(f"Ahorcado. La palabra era: {palabra}")
+    else:
+        print(f"Bien hecho! adivinaste la palabra {palabra}")
+
+ahorcado()
